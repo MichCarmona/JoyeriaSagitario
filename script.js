@@ -1,3 +1,4 @@
+
 const icono=document.querySelector('.icono-menu');
 const menu=document.querySelector('.menu-navegacion');
 const buscador =document.querySelector('.buscar input');
@@ -38,28 +39,3 @@ window.addEventListener('resize', function() {
     }
 });
 
-window.addEventListener("scroll", function () {
-    const navbar = document.querySelector(".menu-navegacion");
-    if (window.scrollY > 0) {
-        navbar.classList.add("scroll-activo");
-    } else {
-        navbar.classList.remove("scroll-activo");
-    }
-});
-
-let prevScrollPos = window.pageYOffset; // Guarda la posición de desplazamiento anterior
-
-window.addEventListener("scroll", function () {
-    const currentScrollPos = window.pageYOffset;
-
-    // Verifica si el usuario ha hecho scroll hacia arriba
-    if (currentScrollPos > prevScrollPos) {
-        // Si están haciendo scroll hacia abajo, oculta la barra de navegación
-        document.querySelector(".menu-navegacion").style.transform = "translateY(-100%)";
-    } else {
-        // Si están haciendo scroll hacia arriba, muestra la barra de navegación
-        document.querySelector(".menu-navegacion").style.transform = "translateY(0)";
-    }
-
-    prevScrollPos = currentScrollPos; // Actualiza la posición de desplazamiento anterior
-});
